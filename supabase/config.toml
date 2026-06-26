@@ -1,0 +1,16 @@
+project_id = "cproilvzmqcviytikmkg"
+
+[functions.analyze-meal]
+verify_jwt = false
+
+[functions.decode-lab-report]
+verify_jwt = false
+
+[functions.calculate-risk]
+verify_jwt = false
+
+[functions.elevenlabs-tts]
+verify_jwt = false
+
+[functions.know-yourself]
+verify_jwt = false
