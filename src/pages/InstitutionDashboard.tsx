@@ -147,11 +147,10 @@ const InstitutionDashboard = () => {
   const handleJoin = async () => {
     if (!joinCode.trim()) return;
     setJoining(true);
-    const { data: inst } = await supabase
-      .from("institutions")
-      .select("id, name")
-      .eq("invite_code", joinCode.trim())
-      .maybeSingle();
+    const { data: lookup } = await supabase.rpc("lookup_institution_by_invite", {
+      _code: joinCode.trim(),
+    });
+    const inst = Array.isArray(lookup) ? lookup[0] : lookup;
 
     if (!inst) {
       toast({ title: "Invalid Code", description: "No institution found with this code.", variant: "destructive" });
