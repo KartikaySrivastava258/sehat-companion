@@ -6,7 +6,6 @@
 
 Culturally-aware, multilingual AI for early Diabetes & Blood Pressure risk awareness — guidance, not diagnosis.
 
-[![Live Demo](https://img.shields.io/badge/Live-sehat--mitra.lovable.app-0d9488?style=flat-square)](https://sehat-mitra.lovable.app)
 [![React](https://img.shields.io/badge/React-18-61dafb?style=flat-square&logo=react&logoColor=white)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Vite](https://img.shields.io/badge/Vite-5-646cff?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev)
@@ -47,9 +46,9 @@ The product is intentionally **assistive, not diagnostic**. Every output is fram
 
 **Frontend** — React 18, TypeScript 5, Vite 5, Tailwind CSS 3, shadcn/ui, Radix UI, React Router, TanStack Query, Recharts, jsPDF.
 
-**Backend (Lovable Cloud)** — PostgreSQL with Row-Level Security, Deno Edge Functions (serverless microservices), Supabase Auth (JWT), Supabase Storage.
+**Backend ( Cloud)** — PostgreSQL with Row-Level Security, Deno Edge Functions (serverless microservices), Supabase Auth (JWT), Supabase Storage.
 
-**AI** — Google Gemini 2.5 Flash via Lovable AI Gateway for vision, multilingual reasoning, and structured JSON outputs.
+**AI** — Google Gemini 2.5 Flash via  AI Gateway for vision, multilingual reasoning, and structured JSON outputs.
 
 **Security** — RLS on every public table, `SECURITY DEFINER` helpers with pinned `search_path`, role-based access via a dedicated `user_roles` table, JWT-gated edge functions, payload size limits.
 
@@ -64,7 +63,7 @@ The product is intentionally **assistive, not diagnostic**. Every output is fram
                 └────────────────────┬────────────────────┘
                                      │  HTTPS / JWT
                 ┌────────────────────▼────────────────────┐
-                │             Lovable Cloud               │
+                │              Cloud               │
                 │  ┌────────────┐  ┌────────────────────┐ │
                 │  │ Postgres   │  │  Edge Functions    │ │
                 │  │  + RLS     │  │  calculate-risk    │ │
@@ -75,7 +74,7 @@ The product is intentionally **assistive, not diagnostic**. Every output is fram
                 └────────────────────────────┼────────────┘
                                              │
                                 ┌────────────▼────────────┐
-                                │  Lovable AI Gateway     │
+                                │   AI Gateway     │
                                 │  Gemini 2.5 Flash       │
                                 └─────────────────────────┘
 ```
@@ -114,7 +113,7 @@ cd sehatguardian
 npm install
 npm run dev
 ```
-The app starts on `http://localhost:8080`. Backend (database, auth, edge functions) runs on Lovable Cloud — no local setup required.
+The app starts on `http://localhost:8080`. Backend (database, auth, edge functions) runs on  Cloud — no local setup required.
 
 ### Build
 ```bash
