@@ -246,6 +246,13 @@ export type Database = {
       is_designated_admin: { Args: never; Returns: boolean }
       is_institution_admin: { Args: { _inst_id: string }; Returns: boolean }
       is_institution_member: { Args: { _inst_id: string }; Returns: boolean }
+      lookup_institution_by_invite: {
+        Args: { _code: string }
+        Returns: {
+          id: string
+          name: string
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never
