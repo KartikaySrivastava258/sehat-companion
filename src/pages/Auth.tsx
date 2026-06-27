@@ -7,7 +7,8 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
-import { Loader2, Heart, ArrowLeft } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { Loader2, Heart, ArrowLeft, MailCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const emailSchema = z.string().trim().email({ message: "Please enter a valid email address" });
