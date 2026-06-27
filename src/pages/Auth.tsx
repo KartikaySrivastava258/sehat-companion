@@ -252,7 +252,33 @@ const Auth = () => {
                   isLogin ? "Sign In" : "Create Account"
                 )}
               </Button>
+
+              {needsConfirmation && isLogin && (
+                <div className="rounded-lg border border-amber-300/50 bg-amber-50 dark:bg-amber-950/30 p-3 space-y-2">
+                  <div className="flex items-start gap-2">
+                    <MailCheck className="w-4 h-4 mt-0.5 text-amber-600 dark:text-amber-400 shrink-0" />
+                    <p className="text-sm text-amber-900 dark:text-amber-100">
+                      Your email isn’t confirmed yet. Check your inbox for the verification link, or resend it below.
+                    </p>
+                  </div>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    className="w-full"
+                    onClick={handleResendConfirmation}
+                    disabled={resending}
+                  >
+                    {resending ? (
+                      <><Loader2 className="w-4 h-4 animate-spin" /> Sending…</>
+                    ) : (
+                      "Resend confirmation email"
+                    )}
+                  </Button>
+                </div>
+              )}
             </form>
+
 
             <div className="mt-6 text-center">
               <p className="text-sm text-muted-foreground">
